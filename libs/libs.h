@@ -40,11 +40,14 @@
 #else
 #  ifndef vms
 #    ifndef _WIN32
-#      ifdef __APPLE__
+#      if defined(__has_include)
+#        if __has_include(<values.h>)
+#          include <values.h>
+#        else
+#          include <limits.h>
+#        endif
+#      else
 #        include <limits.h>
-#      endif
-#      ifdef __linux__
-#        include <values.h>
 #      endif
 #    endif
 #  endif
@@ -706,21 +709,7 @@ typedef struct {
 
 /* Command line option stuff. */
 
-#ifdef unix
-#define DYNSUF          "_dyn"
-#define INFOSUF         "_info"
-#define SARSUF          "_sar"
-#define LIBNAME         "lib"  /* must add prefix (e.g. sdlib) */
-#endif
-
-#ifdef __APPLE__
-#define DYNSUF "_dyn"
-#define INFOSUF "_info"
-#define SARSUF "_sar"
-#define LIBNAME "lib" /* must add prefix (e.g. sdlib) */
-#endif
-
-#ifdef vms
+#if defined(unix) || defined(__APPLE__) || defined(vms)
 #define DYNSUF          "_dyn"
 #define INFOSUF         "_info"
 #define SARSUF          "_sar"
