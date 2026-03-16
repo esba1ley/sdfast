@@ -22,11 +22,11 @@
  * The type of V must be scalar after indices apply. 
  */
 pExpr 
-DERIV(register pExpr E,
-      register pExpr V)
+DERIV(pExpr E,
+      pExpr V)
 {
     pExpr D, X;
-    register tIndex i;
+    tIndex i;
 
     CHECKX(E);
     CHECKX(V);

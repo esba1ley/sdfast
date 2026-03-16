@@ -103,12 +103,12 @@ static char IS_BSINORCOSSQ(pExpr E,
 /* ADD */
 /*=====*/
 
-pExpr DO_ADD(register pExpr E1,
-             register pExpr E2
+pExpr DO_ADD(pExpr E1,
+             pExpr E2
 )
 {
     /* This is the function that actually does an ADD. */
-    register pExpr E;
+    pExpr E;
     pExpr Parm, a, b, fsq;
     tIndex I;
     enum tKnownFunction NeedFunc;

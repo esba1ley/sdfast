@@ -19,7 +19,7 @@
 /* SCALAR_TYPE */
 /*=============*/
 
-void SCALAR_TYPE(register struct tExprType *T)
+void SCALAR_TYPE(struct tExprType *T)
 {
     /* returns a scalar type in T */
 
@@ -30,7 +30,7 @@ void SCALAR_TYPE(register struct tExprType *T)
 }
 
 void VECTOR_TYPE(NodeValueType_t baseType,
-            register struct tExprType *T)
+            struct tExprType *T)
 {
     T->ValueType = cVectorVal;
     T->Dim1 = 3;
@@ -39,7 +39,7 @@ void VECTOR_TYPE(NodeValueType_t baseType,
 }
 
 void MATRIX_TYPE(NodeValueType_t baseType,
-            register struct tExprType *T)
+            struct tExprType *T)
 {
     T->ValueType = cMatrixVal;
     T->Dim1 = 3;
@@ -49,7 +49,7 @@ void MATRIX_TYPE(NodeValueType_t baseType,
 
 void ARRAY1d_TYPE(NodeValueType_t baseType,
              tIndex dim1,
-             register struct tExprType *T)
+             struct tExprType *T)
 {
     T->ValueType = cArray1dVal;
     T->Dim1 = dim1;
@@ -60,7 +60,7 @@ void ARRAY1d_TYPE(NodeValueType_t baseType,
 void ARRAY2d_TYPE(NodeValueType_t baseType,
              tIndex dim1,
              tIndex dim2,
-             register struct tExprType *T)
+             struct tExprType *T)
 {
     T->ValueType = cArray2dVal;
     T->Dim1 = dim1;

@@ -19,12 +19,12 @@
 /* DVD */
 /*=====*/
 
-pExpr DO_DVD(register pExpr N,
-             register pExpr D)
+pExpr DO_DVD(pExpr N,
+             pExpr D)
 {
     /* This function is what actually does a DVD. */
-    register pExpr X;
-    register tIndex I;
+    pExpr X;
+    tIndex I;
 
     C_ASSERT(N && D, 1, "DVD");
     if (D->NodeValueType.ValueType != cScalarVal)

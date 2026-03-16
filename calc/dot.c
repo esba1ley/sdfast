@@ -19,12 +19,12 @@
 /* DOT */
 /*=====*/
 
-pExpr DOT(register pExpr E1,
-          register pExpr E2)
+pExpr DOT(pExpr E1,
+          pExpr E2)
 {
     /* dot product of two vectors -- 0 element ignored*/
     pExpr E;
-    register tIndex i;
+    tIndex i;
 
     C_ASSERT(E1 && E2, 1, "DOT");
     if (!((E1->NodeValueType.ValueType == cVectorVal ||

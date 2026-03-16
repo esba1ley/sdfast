@@ -19,7 +19,7 @@
 /*  USEXIF */
 /*=========*/
 
-pExpr USEXIF(register pExpr X,
+pExpr USEXIF(pExpr X,
              pExpr VX)
 {
     /* This routine is similar to CLEANX.  It examines the     */
@@ -31,7 +31,7 @@ pExpr USEXIF(register pExpr X,
     /* with the appropriately indexed VREF.                    */
     /* Both X and VX are disposed.                            */
     pExpr E;
-    register tIndex i, j;
+    tIndex i, j;
 
     C_ASSERT(VX != NULL, 1, "USEXIF");
     C_ASSERT(IS_VREF(VX), 2, "USEXIF");

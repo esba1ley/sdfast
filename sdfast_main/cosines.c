@@ -59,7 +59,7 @@ static expr Levi(Index_t I,
     /* returns Levi-Civita density (1,-1 or 0) */
     /* actually returns a vector [Levi(I,J,1),Levi(I,J,2), */
     /* Levi(I,J,3)].                                       */
-    register Index_t K;
+    Index_t K;
     expr X;
 
     ASSERT(0 <= I && I < 3 && 0 <= J && J < 3, 1, "Levi");
@@ -80,7 +80,7 @@ expr PIN_COS(Index_t d,
     /* of a U-joint) at DOF d (using q[d]), assuming          */
     /* that the hinge axis is given by the Lambda vector.     */
     expr F;
-    register Index_t X, Y;
+    Index_t X, Y;
 
     Lambda = INUSE(Lambda);
     F = INUSE(NEW_MATX(cScalarVal));
@@ -289,7 +289,7 @@ void DECOMPOSE_123(FILE *F,
  *
  * This is an Order(1) algorithm.  
  */
-void OLD_DECOMPOSE_123(FILE *F,
+static void OLD_DECOMPOSE_123(FILE *F,
               expr dcx,
               sym quot,
               sym angle,

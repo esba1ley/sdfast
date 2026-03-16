@@ -109,10 +109,10 @@ IFEND(FILE *F,
  * An attempt will be made to DISPOSE the passed-in expressions.
  */
 pExpr
-AND(register pExpr E1,
-    register pExpr E2)
+AND(pExpr E1,
+    pExpr E2)
 {
-    register pExpr E;
+    pExpr E;
 
     C_ASSERT(E1 && E2, 1, "AND");
     if (!(IS_SCALAR(E1) && IS_SCALAR(E2)))
@@ -150,10 +150,10 @@ AND(register pExpr E1,
  * An attempt will be made to DISPOSE the passed-in expressions.
  */
 pExpr
-OR(register pExpr E1,
-   register pExpr E2)
+OR(pExpr E1,
+   pExpr E2)
 {
-    register pExpr E;
+    pExpr E;
 
     C_ASSERT(E1 && E2, 1, "OR");
     if (!(IS_SCALAR(E1) && IS_SCALAR(E2)))
@@ -189,9 +189,9 @@ OR(register pExpr E1,
  * An attempt will be made to DISPOSE the passed-in expression.
  */
 pExpr
-NOT(register pExpr E1)
+NOT(pExpr E1)
 {
-    register pExpr E;
+    pExpr E;
 
     C_ASSERT(E1 != NULL, 1, "NOT");
     if (!(IS_SCALAR(E1)))
@@ -220,10 +220,10 @@ NOT(register pExpr E1)
  * An attempt will be made to DISPOSE the passed-in expressions.
  */
 pExpr
-EQUAL(register pExpr E1,
-      register pExpr E2)
+EQUAL(pExpr E1,
+      pExpr E2)
 {
-    register pExpr E;
+    pExpr E;
 
     C_ASSERT(E1 && E2, 1, "EQUAL");
     if (!(IS_SCALAR(E1) && IS_SCALAR(E2)))
@@ -255,10 +255,10 @@ EQUAL(register pExpr E1,
  * An attempt will be made to DISPOSE the passed-in expressions.
  */
 pExpr
-NOTEQUAL(register pExpr E1,
-         register pExpr E2)
+NOTEQUAL(pExpr E1,
+         pExpr E2)
 {
-    register pExpr E;
+    pExpr E;
 
     C_ASSERT(E1 && E2, 1, "NOTEQUAL");
     if (!(IS_SCALAR(E1) && IS_SCALAR(E2)))
@@ -291,10 +291,10 @@ NOTEQUAL(register pExpr E1,
  */
 pExpr
 LESSTHAN(
-         register pExpr E1, 
-         register pExpr E2)
+         pExpr E1, 
+         pExpr E2)
 {
-    register pExpr E;
+    pExpr E;
 
     C_ASSERT(E1 && E2, 1, "LESSTHAN");
     if (!(IS_SCALAR(E1) && IS_SCALAR(E2)))
@@ -326,10 +326,10 @@ LESSTHAN(
  * An attempt will be made to DISPOSE the passed-in expressions.
  */
 pExpr
-GREATERTHAN(register pExpr E1,
-            register pExpr E2)
+GREATERTHAN(pExpr E1,
+            pExpr E2)
 {
-    register pExpr E;
+    pExpr E;
 
     C_ASSERT(E1 && E2, 1, "GREATERTHAN");
     if (!(IS_SCALAR(E1) && IS_SCALAR(E2)))
@@ -361,10 +361,10 @@ GREATERTHAN(register pExpr E1,
  * An attempt will be made to DISPOSE the passed-in expressions.
  */
 pExpr
-LESSOREQ(register pExpr E1, 
-         register pExpr E2)
+LESSOREQ(pExpr E1, 
+         pExpr E2)
 {
-    register pExpr E;
+    pExpr E;
 
     C_ASSERT(E1 && E2, 1, "LESSOREQ");
     if (!(IS_SCALAR(E1) && IS_SCALAR(E2)))
@@ -396,10 +396,10 @@ LESSOREQ(register pExpr E1,
  * An attempt will be made to DISPOSE the passed-in expressions.
  */
 pExpr
-GREATEROREQ(register pExpr E1,
-            register pExpr E2)
+GREATEROREQ(pExpr E1,
+            pExpr E2)
 {
-    register pExpr E;
+    pExpr E;
 
     C_ASSERT(E1 && E2, 1, "GREATEROREQ");
     if (!(IS_SCALAR(E1) && IS_SCALAR(E2)))
@@ -432,11 +432,11 @@ GREATEROREQ(register pExpr E1,
  * An attempt will be made to DISPOSE the passed-in expressions.
  */
 pExpr
-NEARTO(register pExpr E1, 
-       register pExpr E2,
+NEARTO(pExpr E1, 
+       pExpr E2,
        double howClose)
 {
-    register pExpr E;
+    pExpr E;
 
     C_ASSERT(E1 && E2, 1, "NEARTO");
     if (!(IS_SCALAR(E1) && IS_SCALAR(E2)))
@@ -465,11 +465,11 @@ NEARTO(register pExpr E1,
  * An attempt will be made to DISPOSE all the passed-in expressions.
  */
 pExpr
-QUES(register pExpr E1,
-     register pExpr E2,
-     register pExpr E3)
+QUES(pExpr E1,
+     pExpr E2,
+     pExpr E3)
 {
-    register pExpr E;
+    pExpr E;
 
     C_ASSERT(E1 && E2 && E3, 1, "QUES");
     if (!SAME_TYPE(&E2->NodeValueType,&E3->NodeValueType))
@@ -506,12 +506,12 @@ QUES(register pExpr E1,
  * An attempt will be made to DISPOSE all the passed-in expressions.
  */
 pExpr
-QUESDVD(register pExpr E1,
-        register pExpr E2,
-        register pExpr E3,
-        register pExpr E4)
+QUESDVD(pExpr E1,
+        pExpr E2,
+        pExpr E3,
+        pExpr E4)
 {
-    register pExpr E;
+    pExpr E;
 
     C_ASSERT(E1 && E2 && E3 && E4, 1, "QUESDVD");
     if (!SAME_TYPE(&E2->NodeValueType,&E3->NodeValueType))
@@ -555,8 +555,8 @@ REMOVE_QUES(FILE *F,
             int NextTemp,
             int *HighestTemp)
 {
-    register tIndex i, tempno;
-    register pExpr NoIfExpr;
+    tIndex i, tempno;
+    pExpr NoIfExpr;
     int      elsetoo,thentoo;
     pExpr    e1,e2,e3;
 

@@ -19,13 +19,13 @@
 /* TRANSPOSE */
 /*===========*/
 
-pExpr TRANSPOSE(register pExpr E)
+pExpr TRANSPOSE(pExpr E)
 {
     /* Return transpose of E.  If E is scalar or vector we      */
     /* just return it, otherwise make a new 2d thing.           */
     /* The 0th row and column are ignored in the transposition. */
-    register pExpr X;
-    register tIndex I, J;
+    pExpr X;
+    tIndex I, J;
 
     C_ASSERT(E != NULL, 1, "TRANSPOSE");
     if (E->NodeValueType.ValueType != cMatrixVal &&

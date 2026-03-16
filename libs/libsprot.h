@@ -21,7 +21,7 @@
 
 extern CC_C void UPSTR(char* S);
 extern CC_C void TIME_STAMP(string32 DateAndTime);
-extern CC_C int ADD_EXT_TO_FILENAME(char* S, int maxlen, char* Ext);
+extern CC_C int ADD_EXT_TO_FILENAME(char* S, int maxlen, const char* Ext);
 extern CC_C void GET_BASE_NAME(char* instr, char* outstr);
 extern CC_C int READSTR(FILE* F, int len, string32 s);
 extern CC_C int READSTR32(FILE* F, string32 s);
@@ -36,8 +36,9 @@ extern CC_C void INIT_LOOP(SystemInfo_t* SystemInfo, Index_t LoopNum, Index_t Bo
 extern CC_C void INIT_CONSTRAINT(SystemInfo_t* SystemInfo, Index_t ConstraintNum, char* Name, ConstraintKind_t ConstraintKind);
 extern CC_C long STRCMP32(void);
 extern CC_C long GETNUMTIME(void);
+extern CC_C long GETNUMDATE(void);
 extern CC_C double CPU_SECONDS(void);
-extern CC_C void GETDATE(register string11 s);
+extern CC_C void GETDATE(string11 s);
 extern CC_C void GETTIME(string11 s);
 extern CC_C int openr(FILE** f, char* fn);
 extern CC_C int openw(FILE** f, char* fn);
@@ -60,8 +61,8 @@ extern CC_C int GET_INPUTS(SystemInfo_t* sys);
 extern CC_C void genname(int prompting, char* prompt, char* prefix, char* basename, char* ext, char* langsuf, char* name);
 extern CC_C void PROCESS_INPUTS(SystemInfo_t* SystemInfo);
 extern CC_C char DO_INERTIA(FILE* System, SystemInfo_t* SystemInfo);
-extern CC_C char PROCESS_VAR(FILE* System, register SystemInfo_t* SystemInfo, char* ReservedWords[], int IdNum, int* loopjoint);
+extern CC_C char PROCESS_VAR(FILE* System, SystemInfo_t* SystemInfo, char* ReservedWords[], int IdNum, int* loopjoint);
 extern CC_C char READ_SYSTEM(FILE* System, SystemInfo_t* SystemInfo);
-extern CC_C void declare_sys_types(FILE* F, int decl_flags, register SystemInfo_t* sys);
-extern CC_C void declare_input_parms(FILE* F, int decl_flags, register SystemInfo_t* sys);
+extern CC_C void declare_sys_types(FILE* F, int decl_flags, SystemInfo_t* sys);
+extern CC_C void declare_input_parms(FILE* F, int decl_flags, SystemInfo_t* sys);
 extern CC_C void FREE_SYSTEM(SystemInfo_t* SystemInfo);

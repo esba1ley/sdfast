@@ -31,8 +31,8 @@ void CHECKX(pExpr E)
 /* SINDX */
 /*=======*/
 
-void SINDX(register pExpr E,
-      register tIndex I,
+void SINDX(pExpr E,
+      tIndex I,
       pExpr Val)
 {
     /* Sets the indexed element of E to value Val.  Val must */
@@ -40,7 +40,7 @@ void SINDX(register pExpr E,
     /* The protection level of Val is raised by the protection */
     /* level of E to ensure that it won't be disposed of before*/
     /* E is.                                                   */
-    register tIndex J;
+    tIndex J;
     pExpr X;
 
     CHECKX(E);
@@ -105,7 +105,7 @@ void SINDX(register pExpr E,
 /* SINDX2 */
 /*========*/
 
-void SINDX2(register pExpr E,
+void SINDX2(pExpr E,
        tIndex I,
        tIndex J,
        pExpr Val)
@@ -136,13 +136,13 @@ void SINDX2(register pExpr E,
 /*=======*/
 
 pExpr INDX(
-           register pExpr E,
+           pExpr E,
            tIndex I)
 {
     /* Returns the expression E[I] of type baseType(E). */
     /* Disposes E, so WATCH OUT!!!                      */
-    register tIndex J;
-    register pExpr X,temp;
+    tIndex J;
+    pExpr X,temp;
 
     CHECKX(E);
     if (E->NodeValueType.ValueType == cScalarVal)
@@ -189,12 +189,12 @@ pExpr INDX(
 /* INDX2 */
 /*=======*/
 
-pExpr INDX2(register pExpr E,
+pExpr INDX2(pExpr E,
             tIndex Row,
             tIndex Col)
 {
     /* Doubly index a 2-d array valued expression. */
-    register pExpr X, temp;
+    pExpr X, temp;
 
     CHECKX(E);
     if (E->NodeValueType.ValueType != cMatrixVal &&

@@ -26,7 +26,7 @@ int LOOKFORX_INX(pExpr X,
     /* A debugging routine which announces to `output' if expression */
     /* X is found somewhere in expression E.                         */
 
-    register tIndex i, j;
+    tIndex i, j;
     if (!X || !E)
         return 0;
     if (X == E) {

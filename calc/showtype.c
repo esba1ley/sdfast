@@ -32,12 +32,12 @@ SHOW_STUFF(pExpr E)
 /* SHOW_TYPE */
 /*===========*/
 
-void SHOW_TYPE(register pExpr E)
+void SHOW_TYPE(pExpr E)
 {
     /* A debugging routine which prints out a description of */
     /* the passed expression.                                */
 
-    register tIndex i, j;
+    tIndex i, j;
     extern char BinOpNames[][6];
     extern char UnOpNames[][2];
 

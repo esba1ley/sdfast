@@ -220,10 +220,10 @@ static void CLEANSC(
     V->SymValue = INUSE(CLEANX(F, UNUSE(V->SymValue), VREF(V), PrintAll));
 }
 
-static void ALL_VREF1d(register pSym V)
+static void ALL_VREF1d(pSym V)
 {
     /* Make a new value, set to all VREFs */
-    register tIndex i;
+    tIndex i;
 
     V->SymValue = INUSE(NEW_1dARRAY(V->SymValueType.BaseType,
       V->SymValueType.Dim1));
@@ -236,12 +236,12 @@ static void ALL_VREF1d(register pSym V)
 /*===========*/
 
 static void CLEAN1d(FILE *F,
-               register pSym V,
+               pSym V,
                char PrintAll)
 {
     /* For each element of V, if their is no value or the */
     /* value isn't constant, we change it to VREF1(V,i).  */
-    register tIndex i;
+    tIndex i;
     pExpr X;
 
     C_ASSERT(V != NULL, 1, "CLEAN1d");
@@ -272,10 +272,10 @@ static void CLEAN1d(FILE *F,
     V->SymValue = X;
 }
 
-static void ALL_VREF2d(register pSym V)
+static void ALL_VREF2d(pSym V)
 {
     /* Make a new value, set to all VREFs */
-    register tIndex i, j;
+    tIndex i, j;
 
     V->SymValue = INUSE(NEW_2dARRAY(V->SymValueType.BaseType,
       V->SymValueType.Dim1,
@@ -290,12 +290,12 @@ static void ALL_VREF2d(register pSym V)
 /*===========*/
 
 static void CLEAN2d(FILE *F,
-               register pSym V,
+               pSym V,
                char PrintAll)
 {
     /* For each element of V, if their is no value or the */
     /* value isn't constant, we change it to VREF2(V,i,j). */
-    register tIndex i, j;
+    tIndex i, j;
     pExpr X;
 
     C_ASSERT(V != NULL, 1, "CLEAN2d");

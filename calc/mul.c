@@ -21,7 +21,7 @@ static pExpr DUMBMUL(pExpr E1,
     pExpr E;
     pExpr S;        /* Holds E1 if it is the scalar, else E2. */
     pExpr O;        /* The "other" expr after scalar is found. */
-    register tIndex I;
+    tIndex I;
     char NegFlag;
 
     C_ASSERT(E1 && E2, 1, "MUL");
@@ -160,7 +160,7 @@ pExpr DO_MUL(pExpr E1,
              pExpr E2)
 {
     /* This is the function which actually does a MUL. */
-    register pExpr E, F, G;
+    pExpr E, F, G;
 
     /* If the arguments are products, we'll shuffle things around to try */
     /* to get constants to multiply each other.                          */
@@ -257,7 +257,7 @@ pExpr MUL(pExpr E1,
     /* means that at least one of E1,E2 must be a scalar.  To   */
     /* multiply two non-scalars, use DOT, CROSS or MATMUL  as   */
     /* appropriate.                                             */
-    register pExpr E, F;
+    pExpr E, F;
     pExpr best;
 
     /* If this is A*(C*D), and some of A,C, and D are VREFs with       */

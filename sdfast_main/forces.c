@@ -33,7 +33,7 @@
  */
 void COMPUTE_gk(FILE *F)
 {
-    register Index_t k,inb;
+    Index_t k,inb;
     expr temp,gk_expr;
     int  first = 1;
 
@@ -75,7 +75,7 @@ void COMPUTE_gk(FILE *F)
  */
 void COMPUTE_Fstar(FILE *F)
 {
-    register Index_t b,k;
+    Index_t b,k;
     expr Fstar_expr;
 
     if (SysI.s == 0)
@@ -122,7 +122,7 @@ void COMPUTE_Fstar(FILE *F)
  */
 void COMPUTE_Tstar(FILE *F)
 {
-    register Index_t b,k;
+    Index_t b,k;
     expr Tstar_expr;
 
     if (SysI.s == 0)
@@ -330,7 +330,7 @@ void generic_ordern_fs(FILE *F,
                   sym fs,
                   expr fsx)
 {
-    register Index_t i,k;
+    Index_t i,k;
     expr temp, Fstarkx, Tstarkx;
 
     taux = INUSE(taux);
@@ -464,7 +464,7 @@ void COMPUTE_fsmult(FILE *F,
                sym fsmult,
                expr fs_expr)
 {
-    register Index_t p,b;
+    Index_t p,b;
     expr psfkx, pstkx;
 
     if (SysI.s == 0)
@@ -540,7 +540,7 @@ void COMPUTE_fsmult(FILE *F,
  */
 void COMPUTE_reaction(FILE *F)
 {
-    register Index_t i,k,inb,realbody;
+    Index_t i,k,inb,realbody;
     expr fc_expr, tc_expr, ffk_expr, ttk_expr, fccikt_expr, ffkbx, ttkbx;
 
     ffkbx       = INUSE(NEW_1dARRAY(cVectorVal, SysI.n));

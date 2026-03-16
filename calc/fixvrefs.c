@@ -15,14 +15,14 @@
 #include "calc.h"
 #include "calcprot.h"
 
-void FIXUP_VREFS(register pExpr E,
+void FIXUP_VREFS(pExpr E,
             pSym S,
             long NewCnt)
 {
     /* Look through each element of E to see if its a VREF to symbol S. */
     /* If so we bump the assignment count to match the symbol's current */
     /* level, since we're assigning all elements of S now.              */
-    register tIndex i, j;
+    tIndex i, j;
 
     if (!E)
         return;

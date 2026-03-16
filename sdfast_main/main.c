@@ -17,17 +17,8 @@
 #include "sdfast.h"
 #include "sdfaprot.h"
 #include "sderror.h"
-#ifdef apollo
-#include <strings.h>
-extern char *strchr();
-extern char *strrchr();
-#else
 #include <string.h>
-#endif
-
-#ifdef ardent
-extern fprintf();
-#endif
+#include <time.h>
 
 /* These declarations are for the fussy SGI compiler which
  * can't find these static routines otherwise.
@@ -736,7 +727,6 @@ adj_stats(opstats_t opstats[],
 }
 
 #ifdef APPLIED_MOTION
-extern time_t time();
 static time_t last_intrchk;
 
 void

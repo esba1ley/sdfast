@@ -19,11 +19,11 @@
 /* VREF */
 /*======*/
 
-pExpr VREF(register pSym V)
+pExpr VREF(pSym V)
 {
     /* Produces an expression which is a reference to the */
     /* supplied variable.                                 */
-    register pExpr E;
+    pExpr E;
 
     C_ASSERT(V != NULL, 1, "VREF");
     E = NEWX(cVarRefNode, 0, 0);
@@ -38,12 +38,12 @@ pExpr VREF(register pSym V)
 /* VREF1*/
 /*======*/
 
-pExpr VREF1(register pSym V,
+pExpr VREF1(pSym V,
             tIndex Index)
 {
     /* Produces an expression which is a reference to the */
     /* supplied variable, indexed as indicated.           */
-    register pExpr E;
+    pExpr E;
 
     C_ASSERT(V != NULL, 1, "VREF1");
     if (Index >= V->SymValueType.Dim1) {
@@ -64,13 +64,13 @@ pExpr VREF1(register pSym V,
 /* VREF2 */
 /*=======*/
 
-pExpr VREF2(register pSym V,
+pExpr VREF2(pSym V,
             tIndex Row,
             tIndex Col)
 {
     /* Produces an expression which is a reference to */
     /* a particular element of the 2d array V.        */
-    register pExpr E;
+    pExpr E;
 
     C_ASSERT(V != NULL, 1, "VREF2");
     if (Row >= V->SymValueType.Dim1) {

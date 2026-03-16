@@ -48,7 +48,7 @@ void COMPUTE_generic_Otk(FILE *F,
                     sym udotsym,
                     sym  Otksym)
 {
-    register Index_t k,inb;
+    Index_t k,inb;
     expr prev, cross, Otk_expr;
 
     if (SysI.s == 0)
@@ -124,7 +124,7 @@ void COMPUTE_generic_Atk(FILE *F,
                     sym  AiOiWisym,
                     sym  Atksym)
 {
-    register Index_t k,inb;
+    Index_t k,inb;
     expr temp, Atk_expr, AiOiWi_expr;
 
     if (SysI.s == 0)

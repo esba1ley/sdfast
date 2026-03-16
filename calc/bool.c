@@ -146,13 +146,13 @@ MMBOOL SAME_TYPE(
 /* SAME_VREF */
 /*===========*/
 
-MMBOOL SAME_VREF(register pExpr V1,
-          register pExpr V2)
+MMBOOL SAME_VREF(pExpr V1,
+          pExpr V2)
 {
     /* Returns true if both V1 and V2 are references to the */
     /* same element of the same variable.                   */
     /* It's an error if neither V1 nor V2 is a VREF.        */
-    register tIndex I;
+    tIndex I;
 
     if (IS_VREF(V1)) {
         if (!IS_VREF(V2))
@@ -193,7 +193,7 @@ MMBOOL SAME_FUNC(pSym F,
 /*===========*/
 
 MMBOOL SAME_EXPR(pExpr E, 
-          pExpr F )        /* probably slower if register due to recursion */
+          pExpr F )        /* probably slower if due to recursion */
 {
     /* The only thing this function is guaranteed to do is return false if */
     /* E and F represent different expressions.  Sometimes it will even    */
@@ -249,7 +249,7 @@ MMBOOL SAME_EXPR(pExpr E,
 /* IS_ZERO */
 /*=========*/
 
-MMBOOL IS_ZERO(pExpr E)        /* probably slower if register due to recursion */
+MMBOOL IS_ZERO(pExpr E)        /* probably slower if due to recursion */
 {
     /* Returns true if the supplied expression node is a */
     /* constant, and is all zero.                        */
@@ -279,7 +279,7 @@ MMBOOL IS_ZERO(pExpr E)        /* probably slower if register due to recursion *
 /* IS_NRZERO
  * Check for an expression all of whose values are very NEAR zero.
  */
-MMBOOL IS_NRZERO(pExpr E)        /* probably slower if register due to recursion */
+MMBOOL IS_NRZERO(pExpr E)        /* probably slower if due to recursion */
 {
     /* Returns true if the supplied expression node is a */
     /* constant, and all values are near zero.           */
@@ -338,7 +338,7 @@ MMBOOL IS_MINUSONE(pExpr E)
 /* IS_SIMPLE */
 /*===========*/
 
-MMBOOL IS_SIMPLE(register pExpr E)
+MMBOOL IS_SIMPLE(pExpr E)
 {
     /* Returns true if the expression is simple enough that it */
     /* would be better to substitute it into other expressions */

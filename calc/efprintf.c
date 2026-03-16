@@ -118,7 +118,7 @@ CMT_MODE(void)
 static void
 do_eprintf(
     void (*out_func)(char *, int, int, int),
-    register char *fmt,
+    char *fmt,
     va_list argptr)
 {
     char ofmt[50], *percent_pos, outtmp[200], *outstr, *deststr;
@@ -127,7 +127,7 @@ do_eprintf(
     while (*fmt) {
         if (percent_pos = strchr(fmt, '%')) {
             int nindir, otype, subs_offset = 0, leave_lc = 1, begin_line = 0;
-            register char *ofmtp, *cp;
+            char *ofmtp, *cp;
 
             (*out_func)(fmt, (int)(percent_pos - fmt), 0, 0);
             fmt = percent_pos + 1;
@@ -374,7 +374,7 @@ foutput_str(char *s, int len, int leave_lc, int begin_line)
         return;
     }
     while (len) {
-        register char *nlpos;
+        char *nlpos;
         uintptr_t sublen;
 
         if (*s == '\n') {
@@ -418,7 +418,7 @@ foutput_str(char *s, int len, int leave_lc, int begin_line)
         if (!leave_lc &&
           Lang->flags & (cmtmode < 1 ? LANG_STMT_UPPER : LANG_CMT_UPPER)) {
             while (sublen--) {
-                register char ch = islower(*s) ? toupper(*s) : *s;
+                char ch = islower(*s) ? toupper(*s) : *s;
                 putc(ch, stream);
                 s++;
             }
@@ -433,7 +433,7 @@ static void
 soutput_str(char *s, int len, int leave_lc, int begin_line)
 {
     while (len) {
-        register char *nlpos;
+        char *nlpos;
         uintptr_t sublen;
 
         if (*s == '\n') {

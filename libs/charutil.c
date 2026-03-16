@@ -23,7 +23,7 @@
 void UPSTR(char *S)
 {
     /* upshifts the supplied string into itself */
-    register char *cp;
+    char *cp;
 
     for (cp = S; *cp; cp++)
         if (islower(*cp))
@@ -57,9 +57,7 @@ void TIME_STAMP(string32 DateAndTime)
  */
 
 int
-ADD_EXT_TO_FILENAME(char *S,
-                    int maxlen,
-                    char *Ext)
+ADD_EXT_TO_FILENAME(char *S, int maxlen, const char *Ext)
 {
     char *slash;
 
@@ -120,7 +118,7 @@ READSTR(FILE *F,
         int len,
         string32 s)
 {
-    register int i;
+    int i;
 
     if (!fgets(s, len+1, F)) {
         s[0] = '\0';

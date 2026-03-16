@@ -80,10 +80,10 @@
 /* DD is ' D' if day < 10.           */
 /*===================================*/
 
-void GETDATE(register string11 s)
+void GETDATE(string11 s)
 {
     time_t clock;
-    register char *t;
+    char *t;
 
     time(&clock);
     t = ctime(&clock);
@@ -282,18 +282,15 @@ void GETMACHINEID(string20 machID)
     sprintf(machID, "%08x", rhid);
 #else
 #ifdef sun
-    long gethostid();
-
+#include <unistd.h>
     sprintf(machID, "%08x", gethostid());
 #else
 #ifdef sony
-    long gethostid();
-
+#include <unistd.h>
     sprintf(machID, "%08x", gethostid());
 #else
 #ifdef sgi
-    long sysid();
-
+#include <sys/systeminfo.h>
     sprintf(machID, "%08x", sysid(0));
 #else
 #ifdef apollo
@@ -570,8 +567,7 @@ void GETMACHINEID(string20 machID)
 
 #else
 #ifdef RNEC
-    long gethostid();
-
+#include <unistd.h>
     sprintf(machID, "%08x", gethostid());
 #else
     strcpy(machID, "unknown");

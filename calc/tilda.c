@@ -19,11 +19,11 @@
 /* TILDA */
 /*=======*/
 
-pExpr TILDA(register pExpr V)
+pExpr TILDA(pExpr V)
 {
     /* Given a vector V, return a matrix M: [0,v3,-v2],[-v3,0,v1],[v2,-v1,0] */
-    register pExpr M;
-    register tIndex i;
+    pExpr M;
+    tIndex i;
 
     CHECKX(V);
     if (V->NodeValueType.ValueType != cVectorVal)

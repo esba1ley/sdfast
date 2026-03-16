@@ -81,7 +81,7 @@ rbod_is_gnd(int bnum)
  */
 void COMPUTE_cnk(FILE *F)
 {
-    register Index_t k,inb;
+    Index_t k,inb;
     expr temp, cnk_expr;
 
     if (SysI.s == 0)
@@ -121,7 +121,7 @@ void COMPUTE_cnk(FILE *F)
  */
 void COMPUTE_rnk(FILE *F)
 {
-    register Index_t k,inb;
+    Index_t k,inb;
     expr temp, rnk_expr;
 
     ASSIGN_CLN(F, rnkg, NEG(VAL(SysI.psrcomg)));
@@ -163,7 +163,7 @@ void COMPUTE_rnk(FILE *F)
  */
 void COMPUTE_wk(FILE *F)
 {
-    register Index_t k,inb;
+    Index_t k,inb;
     expr temp, wk_expr;
 
     if (SysI.s == 0)
@@ -209,7 +209,7 @@ void COMPUTE_wk(FILE *F)
  */
 void COMPUTE_vnk(FILE *F)
 {
-    register Index_t k,inb;
+    Index_t k,inb;
     expr temp, vnk_expr;
 
     if (SysI.s == 0)
@@ -253,7 +253,7 @@ void COMPUTE_vnk(FILE *F)
  */
 void COMPUTE_onk(FILE *F)
 {
-    register Index_t k,inb;
+    Index_t k,inb;
     expr temp, Onkb_expr, onk_expr;
 
     if (SysI.s == 0)
@@ -311,7 +311,7 @@ void COMPUTE_onk(FILE *F)
  */
 void COMPUTE_ank(FILE *F)
 {
-    register Index_t k,inb;
+    Index_t k,inb;
     expr Ankb_expr, ank_expr, AOnkri_expr, AnkAtk_expr;
     expr temp,  Ankinb, Ankbod;
 
@@ -385,7 +385,7 @@ void COMPUTE_ank(FILE *F)
  */
 void COMPUTE_com(FILE *F)
 {
-    register Index_t i,k;
+    Index_t i,k;
     expr com_expr;
 
     /* Start with the contribution from bodies welded to ground.  If there
@@ -432,7 +432,7 @@ void COMPUTE_com(FILE *F)
  */
 void COMPUTE_cnb(FILE *F)
 {
-    register int b,k;
+    int b,k;
     expr cnb_expr;
 
     cnb_expr = INUSE(NEW_1dARRAY(cMatrixVal, SysI.n));
@@ -507,7 +507,7 @@ void COMPUTE_Cio(FILE *F)
  */
 void COMPUTE_rnb(FILE *F)
 {
-    register int b,k;
+    int b,k;
     expr rnb_expr;
 
     rnb_expr = INUSE(NEW_1dARRAY(cVectorVal, SysI.n));
@@ -544,7 +544,7 @@ void COMPUTE_rnb(FILE *F)
  */
 void COMPUTE_wb(FILE *F)
 {
-    register int b,k;
+    int b,k;
     expr wb_expr;
 
     wb_expr = INUSE(NEW_1dARRAY(cVectorVal, SysI.n));
@@ -648,7 +648,7 @@ void COMPUTE_wbtemps(FILE *F)
  */
 void COMPUTE_vnb(FILE *F)
 {
-    register int b,k;
+    int b,k;
     expr vnb_expr, wbrcomx;
 
     wbrcomx  = INUSE(NEW_1dARRAY(cVectorVal, SysI.n));
@@ -690,7 +690,7 @@ void COMPUTE_vnb(FILE *F)
  */
 void COMPUTE_onb(FILE *F)
 {
-    register int b,k;
+    int b,k;
     expr onb_expr;
 
     onb_expr = INUSE(NEW_1dARRAY(cVectorVal, SysI.n));
@@ -734,7 +734,7 @@ void COMPUTE_onb(FILE *F)
  */
 void COMPUTE_dyad(FILE *F)
 {
-    register Index_t b,i,j;
+    Index_t b,i,j;
     expr dyad_expr,temp;
 
     dyad_expr = INUSE(NEW_1dARRAY(cMatrixVal, SysI.n));
@@ -787,7 +787,7 @@ void COMPUTE_dyad(FILE *F)
  */
 void COMPUTE_anb(FILE *F)
 {
-    register int b,k;
+    int b,k;
     expr anb_expr, dyrcomx;
 
     dyrcomx  = INUSE(NEW_1dARRAY(cVectorVal, SysI.n));

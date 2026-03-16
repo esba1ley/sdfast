@@ -93,8 +93,8 @@ long ASGOPS_USED(void)
 void RESET_OPS(void)
 {
     /* Set OP counts to zero. */
-    register tBinaryOperator binop;
-    register tUnaryOperator unop;
+    tBinaryOperator binop;
+    tUnaryOperator unop;
 
     for (binop = cAdd; binop <= cDeriv; binop++)
         gBinOpCount[binop] = 0;

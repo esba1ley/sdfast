@@ -19,11 +19,11 @@
 /* NEG */
 /*=====*/
 
-pExpr NEG(register pExpr E)
+pExpr NEG(pExpr E)
 {
     /* return the negative of E */
-    register pExpr X;
-    register tIndex I;
+    pExpr X;
+    tIndex I;
 
     C_ASSERT(E != NULL, 1, "NEG");
     if (IS_ZERO(E))

@@ -18,11 +18,11 @@
 /* These declarations are for the fussy SGI compiler which
  * can't find these static routines otherwise.
  */
-static void INIT_PSEUDO_BODY(register BodyDesc_t *UserBody,
+static void INIT_PSEUDO_BODY(BodyDesc_t *UserBody,
                              int whichaxis,
-                             register BodyDesc_t *PseudoBody);
-static void PROCESS_QUESTION_MARKS(register SystemInfo_t *SystemInfo);
-static void MAKE_PSEUDO_BODIES(register SystemInfo_t *SystemInfo);
+                             BodyDesc_t *PseudoBody);
+static void PROCESS_QUESTION_MARKS(SystemInfo_t *SystemInfo);
+static void MAKE_PSEUDO_BODIES(SystemInfo_t *SystemInfo);
 
 /* PROCESS_QUESTION_MARKS 
  * 
@@ -39,9 +39,9 @@ static void MAKE_PSEUDO_BODIES(register SystemInfo_t *SystemInfo);
  * generation of SDINIT.
  */
 static void
-PROCESS_QUESTION_MARKS(register SystemInfo_t *SystemInfo)
+PROCESS_QUESTION_MARKS(SystemInfo_t *SystemInfo)
 {
-    register Index_t b, i, j;
+    Index_t b, i, j;
     expr temp_x,temp_nom,mk_x,ik_x,rk_x,ri_x,pres_x;
     expr lbtj_x,litj_x,lpres_x;
     expr conspt_x[MAXCONSPTS], consvec_x[MAXCONSVECS], conssc_x[MAXCONSSCS];
@@ -416,10 +416,10 @@ PROCESS_QUESTION_MARKS(register SystemInfo_t *SystemInfo)
  */
 
 static void
-MAKE_PSEUDO_BODIES(register SystemInfo_t *SystemInfo)
+MAKE_PSEUDO_BODIES(SystemInfo_t *SystemInfo)
 {
     /* Setup pseudo bodies. */
-    register Index_t ndof, dof, inb, i, j;
+    Index_t ndof, dof, inb, i, j;
     BodyDesc_t       *weldedbody, *w;
     int              realinb;
 
@@ -498,11 +498,11 @@ MAKE_PSEUDO_BODIES(register SystemInfo_t *SystemInfo)
  * pseudobody which is massless, has zero itj & btj vectors, etc.  (Make
  * sure "whichaxis" is -1 in this case.)
  */
-static void INIT_PSEUDO_BODY(register BodyDesc_t *UserBody,
+static void INIT_PSEUDO_BODY(BodyDesc_t *UserBody,
                              int whichaxis,
-                             register BodyDesc_t *PseudoBody)
+                             BodyDesc_t *PseudoBody)
 {
-    register int i,j;
+    int i,j;
 
     strcpy(PseudoBody->BodyName, 
            UserBody ? "pseudo body" : "ground pseudo body");

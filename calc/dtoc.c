@@ -25,7 +25,7 @@
 int NiceDTOC(scalar r,
              char *Out)
 {
-    register char *sp;
+    char *sp;
     char *dp, *ep, *zp, expchar;
 
     if (Lang->flags & LANG_STMT_UPPER) {

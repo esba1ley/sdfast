@@ -112,8 +112,8 @@ pExpr COPY_EXPR(pExpr E)
     /* under E is copied if necessary (i.e. not Permanent).    */
     /* E is not disposed here.  The protection of the newly    */
     /* created expression returned is cTemporary.              */
-    register pExpr X;
-    register tIndex i, j;
+    pExpr X;
+    tIndex i, j;
 
     if (!E)
         return NULL;
@@ -194,7 +194,7 @@ pExpr COPY_EXPR(pExpr E)
 
 long EXPR_COST(pExpr E)
 {
-    register tIndex Cnt, i, j;
+    tIndex Cnt, i, j;
 
     Cnt = 0;
     if (E)
@@ -246,8 +246,8 @@ long EXPR_COST(pExpr E)
 /*=============*/
 
 pExpr APPLYBIN_OP(tBinaryOperator Op,
-                  register pExpr E1,
-                  register pExpr E2)
+                  pExpr E1,
+                  pExpr E2)
 {
     /* Applies the given binary operator Op to the expressions E1 and E2.  */
     /* May make several trial runs if E1 and/or E2 is a variable reference */
@@ -256,7 +256,7 @@ pExpr APPLYBIN_OP(tBinaryOperator Op,
     /* all to make similar trials and pick the best result.                */
     pExpr E1R, E2R, best, trial, temp;
     long bcost, trcost;
-    register tIndex i;
+    tIndex i;
 
     E1R = NULL;
     E2R = NULL;

@@ -27,8 +27,8 @@ static long EXPR_LEN(pExpr E)
     /* space is counted, e.g. variable names, indexes, constants, etc.       */
     /* A function call is just counts one since they are currently all       */
     /* abbreviated.  Operators aren't counted at all.                        */
-    register long Cnt = 0;
-    register tIndex i, j;
+    long Cnt = 0;
+    tIndex i, j;
 
     if (E)
         switch (E->NodeKind) {
@@ -77,7 +77,7 @@ pExpr LIMIT_EXPR(FILE *F,
        references to TEMP(i).  i is chosen starting with NextTemp and
        incrementing.  Highest temp used is returned in HighestTemp.        */
 
-    register pExpr LimitedExpr;
+    pExpr LimitedExpr;
     long LeftCount, RtCount, FirstCnt, SecondCnt, ThirdCnt;
 
     *HighestTemp = NextTemp - 1;        /* none used yet */

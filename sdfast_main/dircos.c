@@ -47,7 +47,7 @@ void COMPUTE_JOINT_CONSTS(FILE *F)
 void COMPUTE_Wkk(FILE *F)
 {
     expr e, Wkk_expr;
-    register Index_t i,w;
+    Index_t i,w;
 
     Wkk_expr = INUSE(NEW_1dARRAY(cVectorVal, SysI.s));
 
@@ -81,7 +81,7 @@ void COMPUTE_Wkk(FILE *F)
 void COMPUTE_Vkk(FILE *F)
 {
     expr e, Vkk_expr;
-    register Index_t i;
+    Index_t i;
 
     Vkk_expr = INUSE(NEW_1dARRAY(cVectorVal, SysI.s));
 
@@ -110,7 +110,7 @@ void COMPUTE_Vkk(FILE *F)
 void COMPUTE_rkWkk(FILE *F)
 {
     expr rkWkk_expr;
-    register Index_t k;
+    Index_t k;
 
     rkWkk_expr = INUSE(NEW_1dARRAY(cVectorVal, SysI.s));
 
@@ -131,7 +131,7 @@ void COMPUTE_rkWkk(FILE *F)
 void COMPUTE_dik(FILE *F)
 {
     expr dik_expr;
-    register Index_t i,k;
+    Index_t i,k;
 
     dik_expr = INUSE(NEW_1dARRAY(cVectorVal, SysI.s));
 
@@ -156,7 +156,7 @@ void COMPUTE_dik(FILE *F)
 void COMPUTE_Cik(FILE *F)
 {
     expr e, Cik_expr;
-    register Index_t i,ballnum;
+    Index_t i,ballnum;
 
     if (SysI.s == 0)
         return;

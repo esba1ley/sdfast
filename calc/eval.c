@@ -65,7 +65,7 @@ pExpr CALL_FUNC2(enum tKnownFunction Func,
 /* EVAL */
 /*======*/
 
-pExpr EVAL(register pExpr E)
+pExpr EVAL(pExpr E)
 {
     /* Attempts to evaluate the expression.                                   */
     /* Disposes E, so watch out.                                              */
@@ -74,7 +74,7 @@ pExpr EVAL(register pExpr E)
     /* This avoids potential disasters which could occur if variables are     */
     /* disposed later, and EVAL has used their values in some expression.     */
     pExpr X, V;
-    register tIndex I;
+    tIndex I;
 
     E = INUSE(E);        /* we don't want E to get hurt yet */
 

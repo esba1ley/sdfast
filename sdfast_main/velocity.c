@@ -32,7 +32,7 @@
  */
 void COMPUTE_Wpk(FILE *F)
 {
-    register Index_t p, k, inb, i;
+    Index_t p, k, inb, i;
     expr temp, Wpk_expr;
 
     if (SysI.s == 0)
@@ -92,7 +92,7 @@ void COMPUTE_Wpk(FILE *F)
  */
 void COMPUTE_Vpk(FILE *F)
 {
-    register Index_t p, k, inb, i;
+    Index_t p, k, inb, i;
     expr temp, Vpk_expr,VWri_expr;
 
     if (SysI.s == 0)
@@ -195,7 +195,7 @@ void COMPUTE_ping(FILE *F)
  */
 void COMPUTE_hngpt(FILE *F)
 {
-    register Index_t k, i;
+    Index_t k, i;
     expr temp;
 
     for (k=0; k<SysI.s; k++) {

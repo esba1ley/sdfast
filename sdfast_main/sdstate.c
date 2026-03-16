@@ -755,7 +755,7 @@ compute_aux_wk(FILE *F)
 void COMPUTE_rpp(FILE *F)
 {
     expr rpp_expr;
-    register Index_t i;
+    Index_t i;
 
     rpp_expr = INUSE(NEW_1dARRAY(cVectorVal, SysI.s));
 
@@ -777,7 +777,7 @@ void COMPUTE_rpp(FILE *F)
 void COMPUTE_rpri(FILE *F)
 {
     expr rpri_expr;
-    register Index_t k;
+    Index_t k;
 
     rpri_expr = INUSE(NEW_1dARRAY(cVectorVal, SysI.s));
 
@@ -799,7 +799,7 @@ void COMPUTE_rpri(FILE *F)
 void COMPUTE_rpk(FILE *F)
 {
     expr rpk_expr;
-    register Index_t k;
+    Index_t k;
 
     rpk_expr = INUSE(NEW_1dARRAY(cVectorVal, SysI.s));
 
@@ -820,7 +820,7 @@ void COMPUTE_rpk(FILE *F)
 void COMPUTE_rik(FILE *F)
 {
     expr rik_expr;
-    register Index_t k;
+    Index_t k;
 
     rik_expr = INUSE(NEW_1dARRAY(cVectorVal, SysI.s));
 
@@ -844,7 +844,7 @@ void COMPUTE_rik(FILE *F)
 void COMPUTE_rik2(FILE *F)
 {
     expr rik2_expr;
-    register Index_t k;
+    Index_t k;
 
     rik2_expr = INUSE(NEW_1dARRAY(cVectorVal, SysI.s));
 
@@ -865,7 +865,7 @@ void COMPUTE_rik2(FILE *F)
 void COMPUTE_rikt(FILE *F)
 {
     expr rikt_expr;
-    register Index_t k;
+    Index_t k;
 
     rikt_expr = INUSE(NEW_1dARRAY(cMatrixVal, SysI.s));
 
@@ -886,7 +886,7 @@ void COMPUTE_rikt(FILE *F)
 void COMPUTE_Wik(FILE *F)
 {
     expr Wik_expr;
-    register Index_t i;
+    Index_t i;
 
     Wik_expr = INUSE(NEW_1dARRAY(cVectorVal, SysI.s));
 
@@ -907,7 +907,7 @@ void COMPUTE_Wik(FILE *F)
 void COMPUTE_Vik(FILE *F)
 {
     expr Vik_expr;
-    register Index_t i;
+    Index_t i;
 
     Vik_expr = INUSE(NEW_1dARRAY(cVectorVal, SysI.s));
 
@@ -927,7 +927,7 @@ void COMPUTE_Vik(FILE *F)
  */
 void COMPUTE_Wirk(FILE *F)
 {
-    register Index_t k, inb;
+    Index_t k, inb;
     expr Wirk_expr;
 
     Wirk_expr  = INUSE(NEW_1dARRAY(cVectorVal, SysI.s));
@@ -952,7 +952,7 @@ void COMPUTE_Wirk(FILE *F)
  */
 void COMPUTE_Wkrpk(FILE *F)
 {
-    register Index_t k;
+    Index_t k;
     expr Wkrpk_expr;
 
     Wkrpk_expr  = INUSE(NEW_1dARRAY(cVectorVal, SysI.s));
@@ -974,7 +974,7 @@ void COMPUTE_Wkrpk(FILE *F)
  */
 void COMPUTE_VikWkr(FILE *F)
 {
-    register Index_t k;
+    Index_t k;
     expr VikWkr_expr;
 
     VikWkr_expr  = INUSE(NEW_1dARRAY(cVectorVal, SysI.s));
@@ -996,7 +996,7 @@ void COMPUTE_VikWkr(FILE *F)
  */
 void COMPUTE_WkIkWk(FILE *F)
 {
-    register Index_t b,k;
+    Index_t b,k;
     expr IkWk_expr,WkIkWk_expr;
 
     IkWk_expr   = INUSE(NEW_1dARRAY(cVectorVal, SysI.s));
@@ -1033,7 +1033,7 @@ void COMPUTE_WkIkWk(FILE *F)
  */
 void COMPUTE_WkIkbWk(FILE *F)
 {
-    register Index_t b,k;
+    Index_t b,k;
     expr IkbWk_expr,WkIkbWk_expr;
 
     IkbWk_expr   = INUSE(NEW_1dARRAY(cVectorVal, SysI.n));

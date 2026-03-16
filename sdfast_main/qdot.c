@@ -36,7 +36,7 @@
  */
 void COMPUTE_qdot(FILE *F)
 {
-    register Index_t i, b, bno, loc;
+    Index_t i, b, bno, loc;
     expr qdot_expr,ee_expr,stab_expr,tmpx;
     char str_flt0[10];
 
@@ -150,7 +150,7 @@ void
 COMPUTE_S_AND_C(FILE *F)
 {
     /* This procedure assigns S1=SIN(Q(1)), C4=COS(Q(4)), etc. */
-    register Index_t b, i;
+    Index_t b, i;
 
     efprintf(F, "%{\nCompute sines and cosines of q\n%}");
     for (b = 0; b < SysI.s; b++) {
@@ -233,7 +233,7 @@ Return position coordinate derivatives for tree joints.\n%}");
 void 
 PRINT_SDU2QDOT(FILE *F)
 {
-    register Index_t b, bno, loc;
+    Index_t b, bno, loc;
     char str_0[10], str_s1[10];
     sym uin;
     expr tmpx;

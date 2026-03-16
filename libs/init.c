@@ -25,7 +25,7 @@ static void
 init_joint(JointDesc_t *jntp,
            Index_t BodyNum)
 {
-    register Index_t i,j;
+    Index_t i,j;
 
     jntp->JointName[0] = '\0';
 
@@ -58,8 +58,8 @@ void INIT_BODY(SystemInfo_t *SystemInfo,
           Index_t BodyNum,
           char *Name)
 {
-    register BodyDesc_t *BodyP = &SystemInfo->Bodies[BodyNum];
-    register int i,j;
+    BodyDesc_t *BodyP = &SystemInfo->Bodies[BodyNum];
+    int i,j;
 
     strcpy(BodyP->BodyName, Name);
     BodyP->Mass = NULL;
@@ -82,7 +82,7 @@ void INIT_LOOP(SystemInfo_t *SystemInfo,
           Index_t BodyNum,
           char *Name)
 {
-    register LoopDesc_t *LoopP = &SystemInfo->LoopConst[LoopNum];
+    LoopDesc_t *LoopP = &SystemInfo->LoopConst[LoopNum];
 
     strcpy(LoopP->OutbBodyName, Name);
     init_joint(&LoopP->jnt, BodyNum);
@@ -98,7 +98,7 @@ void INIT_CONSTRAINT(SystemInfo_t *SystemInfo,
                 char *Name,
                 ConstraintKind_t ConstraintKind)
 {
-    register ConstraintDesc_t *ConstP =
+    ConstraintDesc_t *ConstP =
         &SystemInfo->Const[ConstraintNum];
     int i;
 

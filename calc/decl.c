@@ -53,7 +53,7 @@ static void
 declare_sym(unsigned vtype,
             char     *vname,
             dim_t    *dimu,
-            register pSym *S,
+            pSym *S,
             unsigned decl_flags);
 
 pSym newsym(SymbolKind_t kind)
@@ -263,9 +263,9 @@ packvar(unsigned vtype, ...)
 }
 
 static void
-free_packedvars( )
+free_packedvars(void)
 {
-    register packedvar_t *pvar;
+    packedvar_t *pvar;
 
     while(pv_alloclist) {
         pvar = pv_alloclist->pv_next;
@@ -569,7 +569,7 @@ declare_type(FILE *F, unsigned decl_flags, ...)
     uintptr_t *dimp;
     int      prt;
     char     **sdimp;
-    register struct user_type *user_type;
+    struct user_type *user_type;
 
     va_start(argptr, decl_flags);
 
@@ -989,8 +989,8 @@ get_dims(unsigned    vtype,
          packedvar_t *pvar,
          unsigned    decl_flags)
 {
-    register uintptr_t *dimp = dimu->ut_dim;
-    register char **sdimp = dimu->ut_sdim;
+    uintptr_t *dimp = dimu->ut_dim;
+    char **sdimp = dimu->ut_sdim;
 
     if (vtype & VT_ISUSER)
         return;
@@ -1036,7 +1036,7 @@ declare_sym(
             unsigned vtype,
             char *vname,
             dim_t *dimu,
-            register  pSym *S,
+             pSym *S,
             unsigned decl_flags)
 {
     uintptr_t d0,d1;
@@ -1054,7 +1054,7 @@ declare_sym(
     (*S)->AssignCountS = 0;
 
     if (vtype & VT_ARRAY) {
-        register uintptr_t *dimp = dimu->ut_dim;
+        uintptr_t *dimp = dimu->ut_dim;
         NodeValueType_t basetype;
 
         while (*dimp)

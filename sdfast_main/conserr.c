@@ -98,7 +98,7 @@
  */
 void COMPUTE_lptemps(FILE *F)
 {
-    register Index_t j,inb,outb,ip,op;
+    Index_t j,inb,outb,ip,op;
     JointKind_t jk;
     expr Coix;
     expr vt1x,vt6x,vt7x,vt10x,vt10cx,vt11x;
@@ -210,7 +210,7 @@ void COMPUTE_lptemps(FILE *F)
  */
 void COMPUTE_lvtemps(FILE *F)
 {
-    register Index_t j,inb,outb,ip,op;
+    Index_t j,inb,outb,ip,op;
     JointKind_t jk;
     expr Coix;
     expr vt2x,vt2ax,vt3x,vt4x,vt5x,vt8x,vt9x,vt12x,
@@ -421,7 +421,7 @@ void COMPUTE_lvtemps(FILE *F)
  */
 void COMPUTE_lperr(expr perrx)
 {
-    register Index_t i,j,m;
+    Index_t i,j,m;
     JointKind_t jk;
 
     for (j = 0; j < SysI.nl; j++) {
@@ -505,7 +505,7 @@ void COMPUTE_lperr(expr perrx)
  */
 void COMPUTE_lverr(expr verrx)
 {
-    register Index_t i,j,inb,ip,m;
+    Index_t i,j,inb,ip,m;
     JointKind_t jk;
 
     for (j = 0; j < SysI.nl; j++) {
@@ -640,7 +640,7 @@ void COMPUTE_lverr(expr verrx)
  */
 void COMPUTE_latemps(FILE *F)
 {
-    register Index_t j,inb,outb,ip,op;
+    Index_t j,inb,outb,ip,op;
     JointKind_t jk;
     expr Coix;
     expr vt14x,vt15x,vt16x,vt17x,vt18x,vt19x,vt20x,vt21x,vt22x,vt23x,
@@ -875,7 +875,7 @@ void COMPUTE_latemps(FILE *F)
  */
 void COMPUTE_laerr(expr aerrx)
 {
-    register Index_t i,j,inb,ip,m;
+    Index_t i,j,inb,ip,m;
     JointKind_t jk;
     expr temp;
 
@@ -1226,7 +1226,7 @@ void COMPUTE_presaerr(FILE *F,
  */
 void PRINT_SDPERR(FILE *F)
 {
-    register int i;
+    int i;
 
     declare_proc(F, 0, "perr",
       VT_USER, &SysI.type_Arr_nc, "errs", 
@@ -1267,7 +1267,7 @@ Return position constraint errors.\n\n");
 void PRINT_SDVERR(FILE *F,
              expr lux)
 {
-    register int i;
+    int i;
 
     declare_proc(F, 0, "verr",
       VT_USER, &SysI.type_Arr_nc, "errs", 
@@ -1308,7 +1308,7 @@ Return velocity constraint errors.\n\n");
 void PRINT_SDAERR(FILE *F,
              expr ludotx)
 {
-    register int i;
+    int i;
 
     declare_proc(F, 0, "aerr",
       VT_USER, &SysI.type_Arr_nc, "errs", 

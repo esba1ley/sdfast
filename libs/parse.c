@@ -104,7 +104,7 @@ static int SKIP_BLANKS_ETC(FILE *System)
 {
     /* Scan to the first non-whitespace, non-comment following in */
     /* the file. */
-    register int ch;
+    int ch;
 
     for (;;) {
         if (ILLEGAL_CHAR(ch = GETCH(System)))
@@ -215,7 +215,7 @@ char READ_ID(FILE *System,
 {
     /* reads an identifier from file "System" */
     char *cp = Ident;
-    register int ch;
+    int ch;
     int err = 0; /*assume failure*/
 
     if (!(ch = SKIP_BLANKS_ETC(System)))
@@ -250,7 +250,7 @@ char READ_ID(FILE *System,
 char FIND_EQUAL(FILE *System)
 {
     /* read whitespace from System until we see an equal sign. */
-    register char ch;
+    char ch;
 
     if (!(ch = SKIP_BLANKS_ETC(System)))
         return 0;
@@ -379,7 +379,7 @@ int LOOKUP(char *ReservedWords[],
 {
     /* look up name in ReservedWords, return number or 0 if not found */
     string32 UpName;
-    register Index_t idno;
+    Index_t idno;
 
     strcpy(UpName, Id);
     UPSTR(UpName);

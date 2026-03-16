@@ -35,8 +35,8 @@ pExpr NEW_1dARRAY(NodeValueType_t baseType,
 {
     /* Make a new array1d expression node with the indicated */
     /* base type.                                           */
-    register pExpr E;
-    register tIndex i;
+    pExpr E;
+    tIndex i;
 
     if (baseType != cScalarVal && baseType != cVectorVal &&
         baseType != cMatrixVal)
@@ -58,8 +58,8 @@ pExpr NEW_2dARRAY(NodeValueType_t baseType,
 {
     /* Make a new array2d expression node with the indicated */
     /* base type.                                           */
-    register pExpr E;
-    register tIndex i, j;
+    pExpr E;
+    tIndex i, j;
 
     if (baseType != cScalarVal && baseType != cVectorVal &&
       baseType != cMatrixVal) {
@@ -110,8 +110,8 @@ pExpr NEW_MATX(NodeValueType_t baseType)
 pExpr MAT(matrix M)
 {
     /* Produces a matrix constant expression from a matrix const. */
-    register pExpr E;
-    register tIndex I, J;
+    pExpr E;
+    tIndex I, J;
 
     E = NEWX(cArray2dNode, 3, 3);
     MATRIX_TYPE(cScalarVal, &E->NodeValueType);
@@ -167,7 +167,7 @@ void DISPOSE_EXPR(pExpr E)
 static
 void count_temp_nodes(pExpr E)
 {
-    register tIndex I, J;
+    tIndex I, J;
 
     if (!E || E->Protection > 0) 
         return;
@@ -230,7 +230,7 @@ void count_temp_nodes(pExpr E)
 static
 void dispose_temp_nodes(pExpr E)
 {
-    register tIndex I, J;
+    tIndex I, J;
 
     if (!E || E->Protection > 0) 
         return;
@@ -313,8 +313,8 @@ pExpr MAKE_ZERO(NodeValueType_t T)
     /* Makes an expression node of the given type (base type will */
     /* be scalar) and sets it to zero.                            */
     /* Only works for scalar, vector or matrix.                   */
-    register pExpr X;
-    register tIndex I, J;
+    pExpr X;
+    tIndex I, J;
 
     switch (T) {
         case cScalarVal:
@@ -342,8 +342,8 @@ pExpr MAKE_ZERO_LIKE(pExpr E)
     /* Calls MAKE_EXPR_LIKE to get an expression of the same */
     /* type as E, and then sets it to zero.                  */
     /* Remember that E's base type might not be scalar.      */
-    register pExpr X;
-    register tIndex I, J;
+    pExpr X;
+    tIndex I, J;
 
     X = MAKE_EXPR_LIKE(E);
     switch (X->NodeKind) {
@@ -380,7 +380,7 @@ pExpr NEWX(enum tNodeKind Kind,
     /* Allocates a new temporary expression of the indicated kind.        */
 
     uintptr_t size;
-    register pExpr X;
+    pExpr X;
 
     C_ASSERT(dim1 >= 0, 1, "NEWX");
     C_ASSERT(dim2 >= 0, 2, "NEWX");

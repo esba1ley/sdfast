@@ -44,7 +44,7 @@ pExpr VEC(vector V)
 {
     /* Produces a vector constant expression from a vector const. */
     pExpr E;
-    register tIndex I;
+    tIndex I;
 
     E = NEWX(cArray1dNode, 3, 0);
     VECTOR_TYPE(cScalarVal, &E->NodeValueType);

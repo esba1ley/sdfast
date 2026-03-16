@@ -19,12 +19,12 @@
 /* SUB */
 /*=====*/
 
-pExpr DO_SUB(register pExpr E1,
-             register pExpr E2)
+pExpr DO_SUB(pExpr E1,
+             pExpr E2)
 {
     /* This is the function that actually does a SUB. */
-    register pExpr E;
-    register tIndex I;
+    pExpr E;
+    tIndex I;
 
     C_ASSERT(E1 && E2, 1, "SUB");
     if (!SAME_TYPE(&E1->NodeValueType, &E2->NodeValueType))

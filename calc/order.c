@@ -17,10 +17,10 @@
 #include "calcprot.h"
 
 /* case-insensitive strcmp() */
-int strcmp_ci(register char *s1,
-              register char *s2)
+int strcmp_ci(char *s1,
+              char *s2)
 {
-    register int diff;
+    int diff;
 
     while (*s1 || *s2) {
         if (diff = (isupper(*s1) ? tolower(*s1) : *s1) -
@@ -107,10 +107,10 @@ static enum tExprOrder ORDER_FUNC2(pExpr F,
 /* ORDER_1d */
 /*==========*/
 
-static enum tExprOrder ORDER_1d(register pExpr E,
-                                register pExpr F)
+static enum tExprOrder ORDER_1d(pExpr E,
+                                pExpr F)
 {
-    register tIndex i;
+    tIndex i;
     enum tExprOrder Xorder;
 
     if (E->NodeValueType.Dim1 < F->NodeValueType.Dim1)
@@ -161,7 +161,7 @@ static enum tExprOrder ORDER_2d(pExpr E,
 /* ORDER  */
 /*========*/
 
-enum tExprOrder ORDER(register pExpr E,register pExpr F)
+enum tExprOrder ORDER(pExpr E,pExpr F)
 {
    /* To facilitate detection of identical expressions, we define an ordering
       on expressions so that we always have commutative terms expressed the

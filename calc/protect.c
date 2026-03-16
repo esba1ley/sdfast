@@ -35,7 +35,7 @@ void PROTECT(pExpr E,
     DO_PROTECT(E);
 }
 
-static void DO_PROTECT(register pExpr E)
+static void DO_PROTECT(pExpr E)
 {
     /* This raises the protection level of E and all nodes below */
     /* it in the expression tree by the amount in Level.  We     */
@@ -113,7 +113,7 @@ void UNPROTECT(pExpr E,
     DO_UNPROTECT(E);
 }
 
-static void DO_UNPROTECT(register pExpr E)
+static void DO_UNPROTECT(pExpr E)
 {
     /* This trudges down E and its subtree, reducing the protection */
     /* level of each node by Level until hitting a leaf or a node   */

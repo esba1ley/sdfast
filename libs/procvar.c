@@ -33,12 +33,12 @@
  */
 char
 PROCESS_VAR(FILE                  *System,
-            register SystemInfo_t *SystemInfo,
+            SystemInfo_t *SystemInfo,
             char                  *ReservedWords[],
             int                   IdNum,
             int                   *loopjoint)
 {
-    register Index_t i;
+    Index_t i;
     string32         Str32;
     expr             Rexpr;        /* real expression */
     int              IsNumeric;
@@ -47,7 +47,7 @@ PROCESS_VAR(FILE                  *System,
 
     char *what = ONLOOPJOINT ? "loop joint" : "body";
 
-    register JointDesc_t *jntp =
+    JointDesc_t *jntp =
       ONLOOPJOINT ? &SystemInfo->LoopConst[SystemInfo->nl - 1].jnt
                   : &SystemInfo->Bodies[SystemInfo->n - 1].jnt;
 
@@ -55,9 +55,9 @@ PROCESS_VAR(FILE                  *System,
       ONLOOPJOINT ? SystemInfo->LoopConst[SystemInfo->nl - 1].OutbBodyName
                   : SystemInfo->Bodies[SystemInfo->n - 1].BodyName;
 
-    register BodyDesc_t *BodyP = 
+    BodyDesc_t *BodyP = 
                   &SystemInfo->Bodies[SystemInfo->n - 1];
-    register ConstraintDesc_t *ConstP =
+    ConstraintDesc_t *ConstP =
                   &SystemInfo->Const[SystemInfo->nxc+SystemInfo->nu - 1];
 
     switch (IdNum) {
@@ -1299,8 +1299,8 @@ char
 DO_INERTIA(FILE *System,
            SystemInfo_t *SystemInfo)
 {
-    register Index_t i, j, ii, jj;
-    register BodyDesc_t *BodyP = &SystemInfo->Bodies[SystemInfo->n - 1];
+    Index_t i, j, ii, jj;
+    BodyDesc_t *BodyP = &SystemInfo->Bodies[SystemInfo->n - 1];
     int IsNumeric;
     flags_t QuesFlg;
     expr Rexpr;

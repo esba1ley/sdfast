@@ -19,8 +19,8 @@
 /* MULBASETYPE */
 /*=============*/
 
-static NodeValueType_t MULBASETYPE(register NodeValueType_t t1, 
-                                   register NodeValueType_t t2)
+static NodeValueType_t MULBASETYPE(NodeValueType_t t1, 
+                                   NodeValueType_t t2)
 {
     /* Returns the NodeValueType which would result if expressions           */
     /* of types t1 & t2 were multiplied by MUL, DOT or MATUL as appropriate. */
@@ -52,8 +52,8 @@ static NodeValueType_t MULBASETYPE(register NodeValueType_t t1,
 /* MATMUL */
 /*========*/
 
-pExpr MATMUL(register pExpr M1,
-             register pExpr M2)
+pExpr MATMUL(pExpr M1,
+             pExpr M2)
 {
     /* Matrix multiplication.  Uses DOT if M1&M2 both 1d.     */
     /* If M1 is nxm, then M2                                  */
@@ -61,7 +61,7 @@ pExpr MATMUL(register pExpr M1,
     /* mx1 on the right.                                      */
     /* 0th row and column is ignored.                         */
     pExpr X, T;
-    register tIndex i, j;
+    tIndex i, j;
 
     C_ASSERT(M1 && M2, 1, "MATMUL");
     if (M1->NodeValueType.ValueType == cScalarVal ||

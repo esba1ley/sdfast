@@ -23,7 +23,7 @@ char UnOpNames[][2] = { "-" };
 long gUnOpCount[1];
 
 static void PRINT_EP(FILE *F,
-                register pExpr E,
+                pExpr E,
                 enum tParentOp ParentOp);
 
 /*==============*/
@@ -31,11 +31,11 @@ static void PRINT_EP(FILE *F,
 /*==============*/
 
 void PRINT_VREF(FILE *F,
-           register pExpr V)
+           pExpr V)
 {
     /* Prints the variable reference, no newline.  Won't split the var */
     /* across lines.                                                   */
-    register tIndex i;
+    tIndex i;
     char vout[100], *vp;
 
     C_ASSERT(IS_VREF(V), 1, "PRINT_VREF");
@@ -114,7 +114,7 @@ static enum tParentOp UNOPTYPE(tUnaryOperator Op)
 }
 
 static void PRINT_EP(FILE *F,
-                register pExpr E,
+                pExpr E,
                 enum tParentOp ParentOp)
 {
     /* The parent node's operator is passed in to allow precedence checking   */
@@ -127,7 +127,7 @@ static void PRINT_EP(FILE *F,
     /* **** ELIMINATION OF PARENTHESES HAS BEEN DISABLED, SINCE NUMERICALLY   */
     /* BETTER RESULTS ARE PRODUCED WITH THEM IN. THIS IS DUE TO CANCELLATIONS */
     /* WHICH CAN OCCUR WHEN SIMILAR TERMS ARE COMPUTED IN SIMILAR ORDER.      */
-    register tIndex I, J;
+    tIndex I, J;
     char ParensNeeded;
     enum tParentOp NodeOpType;
 

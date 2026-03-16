@@ -63,7 +63,7 @@ COMPUTE_kane_mm(FILE         *mainF,
                 char        *dynname,
                 int *nxtaux)
 {
-    register Index_t i, j, k;
+    Index_t i, j, k;
     expr temp, IkWpk_expr;
     int err_ret = 0, non_const = 0, nelts, naux, eltsper, eltcnt;
     char str_s[10];
@@ -197,7 +197,7 @@ static expr
 ZAPEXPR(expr Z,
         expr V)
 {
-    register tIndex i, j;
+    tIndex i, j;
 
     Z = INUSE(Z);
     V = INUSE(V);
@@ -223,7 +223,7 @@ static expr
 ZAPEXPR_NC(expr Z,
            expr V)
 {
-    register tIndex i, j;
+    tIndex i, j;
 
     Z = INUSE(Z);
     V = INUSE(V);
@@ -672,7 +672,7 @@ void SDLDU(
       expr *D2xx)
 {
     expr L11,L21,L22,D1,D2,D1INV,D2INV,L11D1,D1L21,L22D2;
-    register tIndex i, j;
+    tIndex i, j;
 
     L11 = MAKE_ZERO(cMatrixVal);
     L22 = MAKE_ZERO(cMatrixVal);

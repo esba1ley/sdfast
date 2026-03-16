@@ -35,7 +35,7 @@
  */
 void PRINT_SDPOS(FILE *F)
 {
-    register int i;
+    int i;
     char groundbod[20];
 
     declare_proc(F, 0, "pos",
@@ -88,7 +88,7 @@ Return inertial frame location of a point on a body.\n\n");
 
 void PRINT_SDVEL(FILE *F)
 {
-    register int i;
+    int i;
     char groundbod[20];
 
     declare_proc(F, 0, "vel",
@@ -148,7 +148,7 @@ Return inertial frame velocity of a point on a body.\n\n");
 
 void PRINT_SDORIENT(FILE *F)
 {
-    register int i,j;
+    int i,j;
     char groundbod[20];
 
     declare_proc(F, 0, "orient",
@@ -193,7 +193,7 @@ Return orientation of body w.r.t. ground frame.\n\n");
 
 void PRINT_SDANGVEL(FILE *F)
 {
-    register int i;
+    int i;
     char groundbod[20];
 
     declare_proc(F, 0, "angvel",
@@ -241,7 +241,7 @@ Return angular velocity of the body.\n\n");
  */
 void PRINT_SDTRANS(FILE *F)
 {
-    register int i;
+    int i;
     char groundbod[20];
 
     declare_proc(F, 0, "trans",
@@ -324,7 +324,7 @@ Transform ivec from frbod frame to tobod frame.\n\n");
 
 void PRINT_SDACC(FILE *F)
 {
-    register int i;
+    int i;
     char groundbod[20];
 
     declare_proc(F, 0, "acc",
@@ -384,7 +384,7 @@ Return linear acceleration a point of the specified body.\n\n");
 
 void PRINT_SDANGACC(FILE *F)
 {
-    register int i;
+    int i;
     char groundbod[20];
 
     declare_proc(F, 0, "angacc",

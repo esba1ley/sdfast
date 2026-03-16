@@ -43,8 +43,8 @@ READ_SYSTEM(FILE *System,
             SystemInfo_t *SystemInfo)
 {
     string32 Id;
-    register Index_t i, j, k;
-    register ConstraintDesc_t *ConstraintP;
+    Index_t i, j, k;
+    ConstraintDesc_t *ConstraintP;
     long NextM,NextDOF,NextBallQ;
     int IdNum, nreq, nmax;
     int loopjoint;        /* state memory for the parser */
@@ -460,7 +460,7 @@ READ_SYSTEM(FILE *System,
     NextM = 0;           /* next available slot in mults array */
     NextBallQ = SystemInfo->s; /* where in q to stick 4th Euler parameters */
     for (i = 0; i < SystemInfo->n; i++) {
-        register int ndof;  /* # of DOF for this joint */
+        int ndof;  /* # of DOF for this joint */
         int first;
 
         jntp = &SystemInfo->Bodies[i].jnt;
@@ -469,7 +469,7 @@ READ_SYSTEM(FILE *System,
             NextDOF += ndof;
             SystemInfo->LastDOF[i] = NextDOF - 1;
         } else {
-            register int bnum;
+            int bnum;
             /* Tree weld joint.  Follow down the inboard bodies until we
              * find the first non-welded one or ground.  Then make our
              * LastDOF the same as the non-welded inboard body's LastDOF,
@@ -536,8 +536,8 @@ READ_SYSTEM(FILE *System,
     NextDOF = 0;
     NextBallQ = SystemInfo->sl;
     for (i = 0; i < SystemInfo->nl; i++) {
-        register int ndof;  /* # of DOF for this loop joint */
-        register int nmults;  /* # of mults slots for this loop joint */
+        int ndof;  /* # of DOF for this loop joint */
+        int nmults;  /* # of mults slots for this loop joint */
 
         jntp = &SystemInfo->LoopConst[i].jnt;
 
@@ -639,7 +639,7 @@ void FREE_SYSTEM(SystemInfo_t *SystemInfo)
  */
 void declare_sys_types(FILE *F,
                   int  decl_flags,
-                  register SystemInfo_t *sys)
+                  SystemInfo_t *sys)
 {
     int s  = MAX(sys->s, 1),  nl = MAX(sys->nl, 1), nlq = MAX(sys->nlq, 1),
         sl = MAX(sys->sl, 1), nh = MAX(sys->nh, 1), nq  = MAX(sys->nq, 1),
@@ -721,7 +721,7 @@ void declare_sys_types(FILE *F,
  */
 void declare_input_parms(FILE *F,
                          int  decl_flags,
-                         register SystemInfo_t *sys)
+                         SystemInfo_t *sys)
 {
     int i;
 

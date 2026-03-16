@@ -19,13 +19,13 @@
 /* OUTER */
 /*=======*/
 
-pExpr OUTER(register pExpr E1,
-            register pExpr E2)
+pExpr OUTER(pExpr E1,
+            pExpr E2)
 {
     /* outer product of two vectors or 1d arrays.  Answer is a matrix or */
     /* 2d array whose 1st dim is same as dim(e1), 2nd is dim(e2)         */
     pExpr E;
-    register tIndex i, j;
+    tIndex i, j;
     NodeValueType_t baseType;
 
     C_ASSERT(E1 && E2, 1, "OUTER");

@@ -30,7 +30,7 @@ void PRINT_ROADMAP(FILE *F)
        will remain that way on return */
 
     int mxlen, actlen;
-    register Index_t i, j, indx, need;
+    Index_t i, j, indx, need;
     char *pres, *bname;
     JointDesc_t *jntp;
 
@@ -245,7 +245,7 @@ efprintf(F, "\n");
 void PRINT_JTAXIS_DOC(FILE *F)
 {
     int trans, quat;
-    register Index_t i, j, ix;
+    Index_t i, j, ix;
     char *pres;
     JointDesc_t *jntp;
 

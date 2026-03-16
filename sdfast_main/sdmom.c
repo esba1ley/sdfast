@@ -64,7 +64,7 @@
 void PRINT_SDMOM(FILE *F,
             opstats_t *opcnt)
 {
-    register Index_t i, b;
+    Index_t i, b;
     sym lm,am,ke,lk,hnk;
     expr lm_expr, am_expr, ke_expr, lk_expr, hnk_expr;
     expr temp;
@@ -229,7 +229,7 @@ Compute system linear and angular momentum, and kinetic energy.\n\n");
 void make_mat(expr r,
          expr mat)
 {
-    register Index_t i,j,k;
+    Index_t i,j,k;
     expr     temp;
 
     for (i = 0; i < 3; i++)
@@ -250,7 +250,7 @@ void make_mat(expr r,
 void PRINT_SDSYS(FILE *F,
             opstats_t *opcnt)
 {
-    register Index_t i, j, p;
+    Index_t i, j, p;
     sym icm,ikcnkt;
     expr icm_expr, ikcnkt_expr;
     expr temp,r,mat;

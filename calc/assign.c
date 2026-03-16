@@ -19,7 +19,7 @@
 /* ASSIGN */
 /*========*/
 
-void ASSIGN(register pSym S,
+void ASSIGN(pSym S,
        pExpr Val)
 {
     /* Assign a value to symbol S.  The expression must be */

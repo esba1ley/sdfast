@@ -51,7 +51,7 @@ void INIT_CALC(int MaxExprLen,
           int MaxTemps)
 {
     /* Call before using the calculator. */
-    register tIndex i, j;
+    tIndex i, j;
 
     SET_LANGUAGE(&Text_language);
 
