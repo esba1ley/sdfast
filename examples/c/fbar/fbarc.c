@@ -63,7 +63,7 @@ main()
     flag = 1;
 
     printf("%6s %14s %14s %14s %14s\n", 
-	"time", "crank pos", "crank vel", "reaction frc x", "reaction frc y");
+	"time", "crank_pos", "crank_vel", "reaction_frc_x", "reaction_frc_y");
 
     for (i=0; i<NSTEPS; i++) {
 	sdmotion(&t,state,dstate,STEP_SIZE,CTOL,TOL,&flag,&err);

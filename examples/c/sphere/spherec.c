@@ -277,8 +277,8 @@ main()
     /* Recompute the derivatives now that the condition is known. */
     deriv(t,y,dy,param,&status);
 
-    printf(" cond     time%6s%8s%6s%6s%6s%8s%8s%8s%9s\n", "rad", "radv", 
-           "com x", "com y", "com z", "angv 1", "angv 2", "angv 3", "energy");
+    printf(" cond     time%8s%10s%8s%8s%8s%8s%8s%10s%11s\n", "rad", "radv", 
+           "com_x", "com_y", "com_z", "angv_1", "angv_2", "angv_3", "energy");
 
     tfinal = t + NSTEP*DT;
     step = DT;
@@ -298,7 +298,7 @@ main()
         pe = -(R_OUTER+comg[1])*grav[1]*mass;
 
         printf(
-          "%c%.4s%9.5f%6.2f%8.2f%6.2f%6.2f%6.2f%8.2f%8.2f%8.2f%9.3f\n",
+          "%c%.4s%9.5f%8.4f%10.4f%8.4f%8.4f%8.4f%8.4f%8.4f%10.4f%11.5f\n",
         condchg ? '*' : ' ', condnames[syscond], t, 
         y[sdindx(RADIUS,0)], y[NQ+sdindx(RADIUS,0)],
         comg[0], comg[1], comg[2],
@@ -546,7 +546,7 @@ int    *status;
 #define SOLNTOL    EPS_FORCE     /* required solution tol */
 #define MAXEVAL    500        /* maximum allowable number of resid calls */
 
-impact(t,y,imp)
+impact(t, y, imp)
 double t,y[NEQ],imp[3];
 {
     int i,err,fcnt,lock[NV],iw[4*(NF+NV)];
