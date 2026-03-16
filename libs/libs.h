@@ -17,9 +17,7 @@
 /*=========================================================================*/
 
 /* Different OS's use different characters to separate directory names
- * in a pathname.  On the MAC it is (apparently) ":".  Under Unix it
- * is "/".  VMS puts the directory in square brackets, e.g. [dir]file.ext,
- * so the "]" serves as the separator.  Under NT, names can be
+ * in a pathname.  Under Mac and Unix it is "/".  Under NT, names can be
  * d:\blah\blah\blah.ext or d:blah.ext so we have to look for either ":"
  * or "\".  For convenience, we also accept "/".  
  * We allow up to 3 pathname delimiters.  If there are fewer, just repeat
@@ -36,37 +34,16 @@
 
 #include "../calc/calc.h"
 #include "../calc/decl.h"
-#ifdef apollo
-#else
-#  ifndef vms
-#    ifndef _WIN32
-#      if defined(__has_include)
-#        if __has_include(<values.h>)
-#          include <values.h>
-#        else
-#          include <limits.h>
-#        endif
-#      else
-#        include <limits.h>
-#      endif
-#    endif
-#  endif
-#endif
+#include <limits.h>
 #ifdef _WIN32
 #  define PATHNAME_DELIM1    '\\'
 #  define PATHNAME_DELIM2    '/'
 #  define PATHNAME_DELIM3    ':'
-#else
-#  ifdef vms
-#    define PATHNAME_DELIM1  ']'
-#    define PATHNAME_DELIM2  ']'
-#    define PATHNAME_DELIM3  ']'
 #  else /* unix */
 #    define PATHNAME_DELIM1  '/'
 #    define PATHNAME_DELIM2  '/'
 #    define PATHNAME_DELIM3  '/'
 #  endif
-#endif
 
 typedef pExpr expr;
 typedef pSym sym;
