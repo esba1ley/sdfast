@@ -50,6 +50,5 @@ CLAUDE.md
 
 
 ### GitHub ###
-.github/workflows/claude-code-review.yml
-.github/workflows/claude.yml
+.github/workflows/claude*
 
